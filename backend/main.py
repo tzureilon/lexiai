@@ -11,6 +11,10 @@ class ChatRequest(BaseModel):
     user_id: str
     message: str
 
+class PredictionRequest(BaseModel):
+    user_id: str
+    case_details: str
+
 @app.post("/chat")
 async def chat(req: ChatRequest):
     headers = {
@@ -33,3 +37,9 @@ async def upload_doc(file: UploadFile = File(...)):
     content = await file.read()
     # TODO: parse document & send to vector DB
     return {"filename": file.filename, "size": len(content)}
+
+@app.post("/predict")
+async def predict(req: PredictionRequest):
+    """Return a stubbed prediction result. In future, integrate ML model."""
+    # TODO: integrate with judicial prediction engine
+    return {"probability": 0.5, "message": "Prediction stub"}
