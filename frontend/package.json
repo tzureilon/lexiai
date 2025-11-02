@@ -15,8 +15,10 @@
     "typescript": "^5.2.2"
   },
   "devDependencies": {
-    "tailwindcss": "latest",
+    "@types/node": "24.9.2",
+    "@types/react": "19.2.2",
+    "autoprefixer": "latest",
     "postcss": "latest",
-    "autoprefixer": "latest"
+    "tailwindcss": "latest"
   }
 }
